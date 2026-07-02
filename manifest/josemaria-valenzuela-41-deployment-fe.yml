@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: josemaria-valenzuela-41-container-fe
-        image: josemariavalenzuela/gemini-huggingface-fe:1.3   # Reemplaza con tu imagen Docker Hub
+        image: josemariavalenzuela/crud-base-fe:1.1  # Reemplaza con tu imagen Docker Hub
         imagePullPolicy: IfNotPresent        # Evitar traer siempre la última versión si hay una actual
         envFrom:
         - secretRef:

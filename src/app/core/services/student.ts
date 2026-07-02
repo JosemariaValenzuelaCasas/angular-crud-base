@@ -7,7 +7,7 @@ import { Student } from '../interfaces/student';
 })
 export class StudentService {
   private http = inject(HttpClient);
-  private apiUrl = 'http://localhost:9003/api/student'; // Cambia esto a la URL de tu API
+  private apiUrl = '/api/student'; 
   getAll(): Observable<Student[]> {
     return this.http.get<Student[]>(this.apiUrl);
   }
@@ -20,7 +20,7 @@ export class StudentService {
     return this.http.put<Student>(`${this.apiUrl}/${id}`, student);
   }
 
-  // Borrado lógico (puede ser un PATCH o un DELETE según tu API en Spring Boot)
+  // Borrado lógico (puede ser un PATCH o un DELETE según API en Spring Boot)
   logicalDelete(id: string): Observable<void> {
     return this.http.patch<void>(`${this.apiUrl}/${id}/delete`, {});
   }
