@@ -1,9 +1,9 @@
 import { Component, signal } from '@angular/core';
-
+import { StudentList } from './components/student-list/student-list';
 @Component({
   selector: 'app-root',
-  imports: [],
-  templateUrl: './app.html',
+  imports: [StudentList],
+  template: '<app-student-list></app-student-list>',
   styleUrl: './app.css'
 })
 export class App {
