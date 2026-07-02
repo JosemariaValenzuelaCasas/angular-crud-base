@@ -1,0 +1,14 @@
+# kubectl apply -f josemaria-valenzuela-41-service-fe.yml
+apiVersion: v1
+kind: Service
+metadata:
+  name: josemaria-valenzuela-41-service-fe
+  namespace: josemaria-valenzuela-41-namespace-fe
+spec:
+  type: NodePort      #30000-32767  # Cambia a LoadBalancer si estás en un entorno de nube
+  ports:
+  - port: 30002       # Puerto que el Service expondrá
+    targetPort: 80  # Puerto en el contenedor donde tu aplicación escucha
+    nodePort: 30002   # Puerto asignado en el nodo, opcional
+  selector:
+    app: josemaria-valenzuela-41-deployment-fe  # Debe coincidir con las etiquetas del Deployment
